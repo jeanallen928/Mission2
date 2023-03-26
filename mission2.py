@@ -8,7 +8,9 @@ def solution(answers):
 
 # 샘플로 내가 만들어본 입력값
 
-answer = [2,1,2,5,1,2,3,4,4,1,3,4,2,5,5,1,3,4,2,5]
+# answer = [2,1,2,5,1,2,3,4,4,1,3,4,2,5,5,1,3,4,2,5] #[4,5,6]
+# answer = [2,1,3,5,1,2,3,4,4,1,3,4,2,5,5,1,3,4,2,5] #[5,5,5]
+answer = [4,4,4,5,4,5,5,1,1,4,4,4,4,5,4,4,5,5,1,4] #[0,0,0]
 
 math_test_answers = [
     [1,2,3,4,5,1,2,3,4,5,1,2,3,4,5,1,2,3,4,5],
@@ -37,8 +39,10 @@ for i, a in enumerate(math_test_answers):
 # case1) 모두 동점인 경우
 
 if len(set(answers_by_testers)) == 1:
-
-    print(f"모두 {total_answer}문제를 맞혔습니다.")
+    if answers_by_testers[0] ==0:
+        print("모든 사람이 모든 문제를 틀렸습니다.")
+    else:
+        print(f"모든 사람이 {total_answer}문제씩을 맞혔습니다.")
 
 # case2) 모두 다른 점수를 득점한 경우
 
